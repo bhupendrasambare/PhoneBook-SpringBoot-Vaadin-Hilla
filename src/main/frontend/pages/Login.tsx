@@ -1,17 +1,26 @@
 import { LoginForm, LoginOverlay } from '@vaadin/react-components'
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+
+    const navigate = useNavigate();
+
     function login(event: any) {
         const { username, password } = event.detail;
         console.log("Username:", username);
         console.log("Password:", password);
-      }
+        navigate("/")
+    }
+    function forgot(event: any) {
+        
+    }
     
     return (
         <div>
           <LoginOverlay 
             onLogin={login} 
+            onForgotPassword={forgot} 
             title="Phone book" 
             description="Built by @Bhupendrasambare"
             opened 

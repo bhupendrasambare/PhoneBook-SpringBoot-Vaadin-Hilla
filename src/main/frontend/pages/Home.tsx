@@ -3,8 +3,9 @@ import React from 'react'
 
 function Home() {
   return (
-    <div className=''>
-      <NavbarComponent/>
+    <div className='home-page'>
+        <NavbarComponent/>
+
     </div>
   )
 }

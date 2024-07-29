@@ -133,3 +133,8 @@ vaadin-login-overlay-wrapper::part(overlay){
     background-size: cover;
     background-position: right;
 }
+/* 
+vaadin-login-form [slot="forgot-password"]{
+    color: transparent;
+    cursor: alias;
+} */

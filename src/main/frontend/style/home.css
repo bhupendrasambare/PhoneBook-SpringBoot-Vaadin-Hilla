@@ -1,0 +1,8 @@
+.home-page{
+    min-height: 100vh;
+    background: url("../assets/images/home-bg-1.jpg") no-repeat;
+    background-size: cover;
+}
+.navbar-light button.navbar-toggler {
+    border-color: #fff;
+  }
