@@ -103,12 +103,12 @@
 
 /* login form */
 vaadin-login-form vaadin-button[theme~="submit"]{
-    background-color: rgba(38, 199, 253, 0.479) !important;
+    background-color: rgba(38, 199, 253, 0.879) !important;
 }
 
 vaadin-login-form-wrapper,
 vaadin-login-overlay-wrapper::part(brand){
-    background-color: rgba(255, 255, 255, 0);    
+    background-color: rgba(255, 255, 255,0.0);    
 }
 vaadin-login-overlay-wrapper::part(card){
     background-color: rgba(255, 255, 255, 0);  

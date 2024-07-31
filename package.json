@@ -4,6 +4,8 @@
   "type": "module",
   "dependencies": {
     "@polymer/polymer": "3.5.1",
+    "@reduxjs/toolkit": "^2.2.7",
+    "@types/react-router-dom": "^5.3.3",
     "@vaadin/bundles": "24.4.2",
     "@vaadin/common-frontend": "0.0.19",
     "@vaadin/hilla-file-router": "24.4.3",
@@ -23,23 +25,27 @@
     "@vaadin/vaadin-material-styles": "24.4.2",
     "@vaadin/vaadin-themable-mixin": "24.4.2",
     "@vaadin/vaadin-usage-statistics": "2.1.2",
+    "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "construct-style-sheets-polyfill": "3.1.0",
     "date-fns": "2.29.3",
     "lit": "3.1.4",
     "proj4": "2.11.0",
-    "react": "18.3.1",
+    "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
-    "react-dom": "18.3.1",
+    "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
-    "react-router-dom": "6.23.1"
+    "react-redux": "^9.1.2",
+    "react-router-dom": "^6.23.1",
+    "redux": "^5.0.1"
   },
   "devDependencies": {
     "@babel/preset-react": "7.24.7",
     "@rollup/plugin-replace": "5.0.7",
     "@rollup/pluginutils": "5.1.0",
-    "@types/react": "18.3.3",
-    "@types/react-dom": "18.3.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/react-redux": "^7.1.33",
     "@vaadin/hilla-generator-cli": "24.4.3",
     "@vaadin/hilla-generator-core": "24.4.3",
     "@vaadin/hilla-generator-plugin-backbone": "24.4.3",
@@ -51,6 +57,7 @@
     "@vaadin/hilla-generator-utils": "24.4.3",
     "@vitejs/plugin-react": "4.3.1",
     "async": "3.2.5",
+    "esbuild": "^0.23.0",
     "glob": "10.4.1",
     "rollup-plugin-brotli": "3.1.0",
     "rollup-plugin-visualizer": "5.12.0",
@@ -122,7 +129,7 @@
       "workbox-core": "7.1.0",
       "workbox-precaching": "7.1.0"
     },
-    "hash": "ff7bea9f4b9d86789cd9c41a87df54312efe4eef90d768a57e4788022b23baaf"
+    "hash": "da85624cd681ca8be4d6c6125db999de61799d153a834398d0777e117f02b461"
   },
   "overrides": {
     "@vaadin/bundles": "$@vaadin/bundles",
@@ -165,6 +172,11 @@
     "@vaadin/vaadin-material-styles": "$@vaadin/vaadin-material-styles",
     "bootstrap": "$bootstrap",
     "react-bootstrap": "$react-bootstrap",
-    "react-icons": "$react-icons"
+    "react-icons": "$react-icons",
+    "@reduxjs/toolkit": "$@reduxjs/toolkit",
+    "@types/react-router-dom": "$@types/react-router-dom",
+    "axios": "$axios",
+    "react-redux": "$react-redux",
+    "redux": "$redux"
   }
 }

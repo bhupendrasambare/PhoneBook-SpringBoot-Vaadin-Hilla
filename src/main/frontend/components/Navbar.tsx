@@ -9,6 +9,7 @@ import { IoIosLogOut } from "react-icons/io";
 import { MdOutlineContactMail } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { FaBarsStaggered } from "react-icons/fa6";
+import { SiSwagger } from "react-icons/si";
 
 function NavbarComponent() {
   
@@ -34,10 +35,12 @@ function NavbarComponent() {
                             <div className="me-4" title="Profile" onClick={()=>navigate("/profile")}>
                                 <CgProfile className="fs-4 text-light" />
                             </div>
+                            <a className="me-4" title="Swagger" href="/swagger-ui/index.html">
+                                <SiSwagger className="fs-4 text-light" />
+                            </a>
                             <div className="me-4" title="Logout" onClick={logout}>
                                 <IoIosLogOut className="fs-4 text-light" />
                             </div>
-
                         </Navbar.Text>
                     </Nav>
                 </Navbar.Collapse>
