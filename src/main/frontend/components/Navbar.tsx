@@ -10,12 +10,19 @@ import { MdOutlineContactMail } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { SiSwagger } from "react-icons/si";
+import { useDispatch } from "react-redux";
+import { SET_TOKEN } from "Frontend/action/tokenActions";
 
 function NavbarComponent() {
   
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const logout = () =>{
+        dispatch({
+            type: SET_TOKEN,
+            payload: null
+          });
         navigate("/login");
     }
 

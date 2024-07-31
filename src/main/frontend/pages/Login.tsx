@@ -27,11 +27,10 @@ function Login() {
                 var tokenString:string = resData.token;
                 dispatch({
                     type: SET_TOKEN,
-                    payload: token
-                  });
+                    payload: tokenString
+                });
                 navigate("/");
             } else {
-                console.log(res.data);
                 setErrorMessage(true);
             }
         }).catch((exc) => {
