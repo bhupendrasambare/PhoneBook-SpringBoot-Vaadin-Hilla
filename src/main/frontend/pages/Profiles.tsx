@@ -1,8 +1,12 @@
+import NavbarComponent from 'Frontend/components/Navbar'
 import React from 'react'
 
 function Profile() {
   return (
-    <div>profile</div>
+    <div className="home-page">
+        <NavbarComponent/>
+        
+    </div>
   )
 }
 

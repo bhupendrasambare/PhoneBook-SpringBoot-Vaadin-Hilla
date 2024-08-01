@@ -4,8 +4,9 @@ import { Provider } from "react-redux"
 import router from "./route"
 import 'bootstrap/dist/css/bootstrap.css';
 import './themes/phone-book/styles.css'
-import store from "./storage/store"
+import {store, persistor } from "./storage/store"
 import App from "./app"
+import { PersistGate } from "redux-persist/integration/react";
 
 const container = document.getElementById("outlet")
 
@@ -14,7 +15,9 @@ if (container) {
 
   root.render(
       <Provider store={store}>
-        <App />
+          <PersistGate loading={null} persistor={persistor}>
+              <App />
+          </PersistGate>
       </Provider>,
   )
 } else {

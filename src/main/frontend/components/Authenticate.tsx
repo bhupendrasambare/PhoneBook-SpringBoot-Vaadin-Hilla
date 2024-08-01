@@ -1,4 +1,4 @@
-import { RootState } from 'Frontend/storage/store';
+import { RootState } from '../storage/rootReducer';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';

@@ -1,6 +1,6 @@
 import { SET_TOKEN, TokenActionTypes } from '../action/tokenActions';
 
-interface TokenState {
+export interface TokenState {
   token: string;
 }
 

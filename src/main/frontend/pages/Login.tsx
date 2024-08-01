@@ -1,7 +1,7 @@
 import { LoginForm, LoginOverlay } from '@vaadin/react-components';
 import axios from 'axios';
-import { SET_TOKEN, setToken } from 'Frontend/action/tokenActions';
-import { RootState } from 'Frontend/storage/store';
+import { SET_TOKEN } from 'Frontend/action/tokenActions';
+import { RootState } from '../storage/rootReducer';
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
