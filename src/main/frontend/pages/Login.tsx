@@ -1,13 +1,13 @@
 import { LoginForm, LoginOverlay } from '@vaadin/react-components';
 import axios from 'axios';
-import { SET_TOKEN } from 'Frontend/action/tokenActions';
-import { RootState } from '../storage/rootReducer';
+import { RootState } from 'Frontend/storage';
+import { setToken } from 'Frontend/storage/authSlice';
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
-    const token = useSelector((state: RootState) => state.token.token);
+    const token = useSelector((state: RootState) => state.auth.token);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState<boolean | undefined>(undefined);
@@ -25,10 +25,7 @@ function Login() {
             if (res.status === 200) {
                 const resData: any = res.data.data;
                 var tokenString:string = resData.token;
-                dispatch({
-                    type: SET_TOKEN,
-                    payload: tokenString
-                });
+                dispatch(setToken(tokenString));
                 navigate("/");
             } else {
                 setErrorMessage(true);

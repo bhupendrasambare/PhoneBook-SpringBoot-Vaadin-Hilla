@@ -5,4 +5,7 @@
 }
 .navbar-light button.navbar-toggler {
     border-color: #fff;
-  }
+}
+.mh-50vh{
+    min-height: 50vh;
+}

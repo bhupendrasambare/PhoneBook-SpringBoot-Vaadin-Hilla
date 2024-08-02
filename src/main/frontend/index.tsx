@@ -4,8 +4,8 @@ import { Provider } from "react-redux"
 import router from "./route"
 import 'bootstrap/dist/css/bootstrap.css';
 import './themes/phone-book/styles.css'
-import {store, persistor } from "./storage/store"
 import App from "./app"
+import { persistor, store } from "./storage";
 import { PersistGate } from "redux-persist/integration/react";
 
 const container = document.getElementById("outlet")

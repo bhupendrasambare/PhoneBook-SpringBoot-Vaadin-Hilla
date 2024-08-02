@@ -1,4 +1,4 @@
-import { RootState } from '../storage/rootReducer';
+import { RootState } from 'Frontend/storage';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
@@ -11,7 +11,7 @@ interface WrapperComponentProps {
 const Authenticate: React.FC<WrapperComponentProps> = ({ children }) => {
 
     const navigate = useNavigate();
-    const token:string = useSelector((state: RootState) => state.token.token);
+    const token:string|null = useSelector((state: RootState) => state.auth.token);
 
     useEffect(()=>{
         if(token!=null && token != undefined && token != ""){

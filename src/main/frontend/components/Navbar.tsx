@@ -11,7 +11,7 @@ import { CgProfile } from "react-icons/cg";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { SiSwagger } from "react-icons/si";
 import { useDispatch } from "react-redux";
-import { SET_TOKEN } from "Frontend/action/tokenActions";
+import { setToken } from "Frontend/storage/authSlice";
 
 function NavbarComponent() {
   
@@ -19,10 +19,7 @@ function NavbarComponent() {
     const dispatch = useDispatch();
 
     const logout = () =>{
-        dispatch({
-            type: SET_TOKEN,
-            payload: null
-          });
+        dispatch(setToken(null));
         navigate("/login");
     }
 
