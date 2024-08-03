@@ -1,86 +1,49 @@
-import React from 'react';
-import { Form } from 'react-bootstrap';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import { render } from 'react-dom';
+import MyVerticallyCenteredModal from './MyVerticallyCenteredModal';
+import { ContactService } from 'Frontend/generated/endpoints';
+import { useSelector } from 'react-redux';
+import { RootState } from 'Frontend/storage';
+import Contact from 'Frontend/generated/com/phone/book/entity/Contact';
 
-interface MyVerticallyCenteredModalProps {
-  show: boolean;
-  onHide: () => void;
+interface CreateContactProps {
+    changeNumber: number;
+    onChangeNumber: (update: number) => void;
 }
 
-const MyVerticallyCenteredModal: React.FC<MyVerticallyCenteredModalProps> = (props) => {
 
+const CreateContact: React.FC<CreateContactProps> = (prop) => {
+    const [modalShow, setModalShow] = useState(false);
+    const token:string|null = useSelector((state: RootState) => state.auth.token);
 
-    
+    const handleFormSubmit = async(name: string, email: string, phone: string) => {
+        console.log('Contacts:', name);
+        const contact:Contact = {
+            "name":name,
+            "email": email,
+            "phoneNumber": phone
+        }
+        if(token!=null){
+            await ContactService.saveContact(contact,token)
+            prop.onChangeNumber(prop.changeNumber+1);
+        }
+    };
 
-  return (
-    <>
-        <Modal
-            {...props}
-            aria-labelledby="contained-modal-title-vcenter"
-            centered
-            >
-            <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title-vcenter">
-                    Add contact
-                </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                
-                <Form>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                        <Form.Label>Name</Form.Label>
-                        <Form.Control
-                            type="name"
-                            placeholder="Johan dou"
-                            autoFocus
-                        />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control
-                            type="email"
-                            placeholder="name@example.com"
-                            autoFocus
-                        />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                        <Form.Label>Phone number</Form.Label>
-                        <Form.Control
-                            type="phone"
-                            placeholder="9178XXXXXX"
-                            autoFocus
-                        />
-                    </Form.Group>
-                </Form>
-            </Modal.Body>
-            <Modal.Footer>
-                <Button className='btn-success'>Save</Button>
-                <Button className='btn-danger' onClick={props.onHide}>Close</Button>
-            </Modal.Footer>
-        </Modal>
-    </>
-  );
-};
-
-const CreateContact: React.FC = () => {
-  const [modalShow, setModalShow] = React.useState(false);
-
-  return (
-    <>
-        <div className="w-100 d-flex">
-            <Button className='my-2 ms-auto bg-success mx-3' variant="success" onClick={() => setModalShow(true)}>
+    return (
+        <>
+            <div className="w-100 d-flex">
+                <Button className='my-2 ms-auto bg-success bg-gradient mx-3' variant="success" onClick={() => setModalShow(true)}>
                 Add contact
-            </Button>
-        </div>
+                </Button>
+            </div>
 
-      <MyVerticallyCenteredModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
-    </>
-  );
+            <MyVerticallyCenteredModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+                onSubmit={handleFormSubmit}
+            />
+        </>
+    );
 };
 
 export default CreateContact;

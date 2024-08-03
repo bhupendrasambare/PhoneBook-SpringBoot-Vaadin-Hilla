@@ -6,6 +6,27 @@
 .navbar-light button.navbar-toggler {
     border-color: #fff;
 }
-.mh-50vh{
-    min-height: 50vh;
+
+.rounded-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #dee2e600;
+    overflow: hidden;
+}
+
+.transparent-table {
+    background-color: transparent;
+}
+
+.transparent-table thead th {
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: semi-transparent header */
+}
+
+.transparent-table tbody td {
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.5); /* Optional: semi-transparent body cells */
+}
+.fixed-column{
+    width: 40px;
 }
