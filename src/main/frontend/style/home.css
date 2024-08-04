@@ -30,3 +30,6 @@
 .fixed-column{
     width: 40px;
 }
+.max-300px{
+    max-width: 300px;
+}

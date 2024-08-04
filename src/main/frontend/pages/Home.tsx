@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux';
 import { RootState } from 'Frontend/storage'
 import { Form, Pagination, Table } from 'react-bootstrap'
 import CreateContact from 'Frontend/components/CreateContact'
-import { FaRegUserCircle } from 'react-icons/fa'
 
 interface PaginatedTableProps {
   data: Contact[];
@@ -57,7 +56,7 @@ function Home() {
             <div className='container my-5'>
                 <CreateContact changeNumber={changeNumber} onChangeNumber={setChangeNumber}/>
                 <div className="table-responsive">
-                    <Table hover  className='transparent-table rounded-3 my-2 mh-50vh rounded-table table-dark'  style={{borderRadius: '5px'}}>
+                    <Table className='transparent-table rounded-3 my-2 mh-50vh rounded-table table-dark'  style={{borderRadius: '5px'}}>
                         <thead className=''>
                         <tr>
                             <th className="fixed-column"></th>
