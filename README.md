@@ -1,16 +1,59 @@
-# Custom project from Hilla
+# Phone Book (Spring-Boot + Vaadin Hilla)
+```text
+Default : username:admin | password:admin
+        _                            _                 _    
+  _ __ | |__   ___  _ __   ___      | |__   ___   ___ | | __
+ | '_ \| '_ \ / _ \| '_ \ / _ \_____| '_ \ / _ \ / _ \| |/ /
+ | |_) | | | | (_) | | | |  __/_____| |_) | (_) | (_) |   < 
+ | .__/|_| |_|\___/|_| |_|\___|     |_.__/ \___/ \___/|_|\_\
+ |_|   
+```
 
-This project can be used as a starting point to create your own Hilla application with Spring Boot.
-It contains all the necessary configuration and some placeholder files to get you started.
+This project demonstrates the integration of Vaadin and Hilla with Spring Boot to create a full-stack application. By combining the power of Vaadin for seamless UI development with the flexibility of React.js, this project showcases how to build a highly reusable and modular full-stack application. The integration of React.js enhances the application by allowing the inclusion of rich, interactive components while maintaining the robustness of a Spring Boot backend.
+
+## Features
+
+- **Full-Stack Integration**: Combines Vaadin's server-side UI components with React.js for client-side interactivity.
+- **Reusability**: Integrates React.js packages to maximize code reusability and reduce redundancy.
+- **Responsive UI**: Leverages Vaadin's powerful UI framework to create a responsive and attractive user interface.
+- **Spring Boot Backend**: Utilizes Spring Boot for backend services, ensuring a robust and scalable application structure.
+- **Hilla Integration**: Enhances the application's capabilities with Hilla, providing seamless communication between the frontend and backend.
+
+## Technologies Used
+
+- **Spring Boot**: Backend framework providing a strong foundation for building Java-based applications.
+- **Vaadin**: A modern web framework for building responsive and accessible UIs using Java.
+- **Hilla**: A toolkit for building reactive applications, providing efficient data communication between the frontend and backend.
+- **React.js**: JavaScript library for building user interfaces, enabling the development of dynamic and interactive web applications.
+- **Java**: Core programming language for the backend logic and services.
+- **H2 Database**: For lightweight and ease-to-use we are using H2-Database.
+- **TypeScript**: Used in combination with React.js for building robust and type-safe frontend components.
 
 ## Running the application
 
-The project is a standard Maven project. To run it from the command line,
-type `mvnw` (Windows), or `./mvnw` (Mac & Linux), then open
-http://localhost:8080 in your browser.
+1. Clone the repository:
+```bash
+git clone https://github.com/bhupendrasambare/PhoneBook-SpringBoot-Vaadin-Hilla.git
+cd PhoneBook-SpringBoot-Vaadin-Hilla
+```
+2. Build the project:
+- Local
+```bash
+./mvn clean install
+```
+- Production
+```bash
+./mvn clean install -Pproduction
+```
 
-You can also import the project to your IDE of choice as you would with any
-Maven project.
+3. Run the application:
+```bash
+./mvn spring-boot:run
+```
+4. Visit web:
+```url
+http://localhost:8081/login
+```
 
 ## Deploying to Production
 
@@ -23,29 +66,14 @@ Once the JAR file is built, you can run it using
 `java -jar target/myapp-1.0-SNAPSHOT.jar` (NOTE, replace
 `myapp-1.0-SNAPSHOT.jar` with the name of your jar).
 
-## Project structure
-
-<table style="width:100%; text-align: left;">
-  <tr><th>Directory</th><th>Description</th></tr>
-  <tr><td><code>src/main/frontend/</code></td><td>Client-side source directory</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>index.html</code></td><td>HTML template</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>index.ts</code></td><td>Frontend 
-entrypoint, bootstraps a React application</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>routes.tsx</code></td><td>React Router routes definition</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>MainLayout.tsx</code></td><td>Main 
-layout component, contains the navigation menu, uses <a href="https://hilla.dev/docs/react/components/app-layout">
-App Layout</a></td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>views/</code></td><td>UI view 
-components</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>themes/</code></td><td>Custom  
-CSS styles</td></tr>
-  <tr><td><code>src/main/java/&lt;groupId&gt;/</code></td><td>Server-side 
-source directory, contains the server-side Java views</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>Application.java</code></td><td>Server entry-point</td></tr>
-</table>
-
-## Useful links
-
-- Read the documentation at [hilla.dev/docs](https://hilla.dev/docs/).
-- Ask questions on [Stack Overflow](https://stackoverflow.com/questions/tagged/hilla) or join our [Discord channel](https://discord.gg/MYFq5RTbBn).
-- Report issues, create pull requests in [GitHub](https://github.com/vaadin/hilla).
+## Screenshots
+# Login
+![Login](./images/login.png)
+# Add Contact
+![Add Contacts](./images/add-contact.png)
+# Contacts
+![Contacts](./images/contacts.png)
+# Create New User
+![Create User](./images/create-user.png)
+# Swagger
+![Swagger](./images/swagger.png)
